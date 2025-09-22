@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #cce7ff, #ffffff);
+  text-align: center;
+}
+
+#hud {
+  background: rgba(255, 255, 255, 0.9);
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 15px;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#gameCanvas {
+  display: block;
+  margin: 20px auto;
+  background: #000;
+  width: 80%;
+  height: 400px;
+  border-radius: 10px;
+}
+
+#translation {
+  font-size: 18px;
+  color: #0077cc;
+  font-weight: bold;
+  min-height: 30px;
+}
