@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Arabic Challenge Game</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="hud">
-    <h1>🎮 Arabic Challenge Game</h1>
-    <p id="instructions">قل الكلمة العربية للانتقال للمرحلة التالية</p>
-    <div id="translation"></div>
+  <div id="ui">
+    <h1 id="title">🎮 Arabic Challenge Game</h1>
+    <div id="topRow">
+      <div id="stageName">المرحلة: 1 — الحروف</div>
+      <div id="controls">
+        <button id="micBtn">Start Mic</button>
+        <span id="micState" class="mic-off">●</span>
+      </div>
+    </div>
+
+    <div id="info">
+      <div id="instructions">اضغط Start Mic ثم انطق الكلمة أو الجملة بالعربية</div>
+      <div id="currentPrompt" dir="rtl"></div>
+      <div id="translation"></div>
+      <div id="progressWrap">
+        <div id="progressLabel">0 / 0</div>
+        <div id="progressBar"><div id="progressFill"></div></div>
+      </div>
+      <div id="lastSpoken" aria-live="polite"></div>
+    </div>
   </div>
-  <canvas id="gameCanvas"></canvas>
+
+  <div id="gameContainer">
+    <canvas id="gameCanvas"></canvas>
+  </div>
+
+  <div id="toast" hidden></div>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <!-- main game logic -->
   <script src="game.js"></script>
 </body>
 </html>
